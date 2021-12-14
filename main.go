@@ -5,5 +5,6 @@ import (
 )
 
 func main() {
-	interfaces.SubstitutabilityDemo()
+
+	interfaces.TypeAssertionsExample()
 }

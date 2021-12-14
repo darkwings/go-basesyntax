@@ -21,7 +21,7 @@ func CountingWriter(w io.Writer) (io.Writer, *int64) {
 	return retval, retval.count
 }
 
-// Altro esempio
+// Altro esempio di wrapping, questa volta dell'oggetto io.Reader
 
 type limitReader struct {
 	nRem   int
@@ -33,7 +33,7 @@ func (l *limitReader) Read(p []byte) (int, error) {
 		return 0, io.EOF
 	}
 	if len(p) > l.nRem {
-		p = p[0:l.nRem]
+		p = p[0:l.nRem] // creo una slice che contiene esattamente i dati mancanti per completare i byte richiesti
 	}
 	n, err := l.reader.Read(p)
 	l.nRem -= n
