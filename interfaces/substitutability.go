@@ -2,7 +2,7 @@ package interfaces
 
 import "fmt"
 
-// Definisco un tipo custom ByteCounter
+// ByteCounter Definisco un tipo custom
 type ByteCounter int
 
 // Aggiungo a ByteCounter il metodo Write, la cui signature è uguale
